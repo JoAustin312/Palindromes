@@ -18,6 +18,8 @@ public class Palindrome
 //                "Red roses run no risk, sir, on Nurse’s order. He lived as a devil, eh? Ned, I am a maiden. Now, sir, a war is won! Evade me, Dave! " +
 //                "Dennis and Edna sinned. Step on no pets!";
 //        System.out.println(findLongestPalindrome(palindromeStringTest));
+
+        //Replaced this with actual tests
     }
 
     public static boolean isPalindrome(String wordToCheck){
