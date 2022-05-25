@@ -41,16 +41,14 @@ public class Palindrome
     }
 
     public static ArrayList<String> findLongestPalindrome(String sentenceToCheck){
-        String[] splitSentence = sentenceToCheck.split(" ");
+        String[] splitSentence = sentenceToCheck.replaceAll("\\p{Punct}", "").split(" ");//removes punctuation and splits string into array
         ArrayList<String> listOfPalindromes = new ArrayList<>();
         ArrayList<String> listOfLongestPalindromes = new ArrayList<>();
         int longestWordChars = 0;
 
         for (String word : splitSentence){ //checks word is more than 3 chars and is a palindrome then adds to arraylist
-            if (word.length() >= 3){
-                if (isPalindrome(word)){
-                    listOfPalindromes.add(word);
-                }
+            if (word.length() >= 3 && isPalindrome(word)){
+                listOfPalindromes.add(word);
             }
         }
         for (String word : listOfPalindromes){ //finds length of longest word and assigns to variable
@@ -65,4 +63,5 @@ public class Palindrome
         }
         return listOfLongestPalindromes;
     }
+
 }
