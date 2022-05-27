@@ -38,8 +38,25 @@ public class PalindromeTest
     public void shouldReturnReversedSpeaker() { assertEquals("rekaeps", reverse("speaker"));}
 
     @Test
-    @DisplayName("should return list of longest palindromes")
-    public void shouldReturnListOfLongestPalindromes() {
+    @DisplayName("should return list of longest palindromes length 5")
+    public void shouldReturnListOfLongestPalindromesLength5() {
+        String palindromeStringTest = "kayak deed peep wow noon civic level mom bird rib taco cat";
+        ArrayList<String> expectedResult = new ArrayList<>(Arrays.asList("kayak", "civic", "level"));
+        assertArrayEquals(expectedResult.toArray(), findLongestPalindrome(palindromeStringTest).toArray());
+    }
+
+    @Test
+    @DisplayName("should return list of longest palindromes length 6")
+    public void shouldReturnListOfLongestPalindromesLength6() {
+        String palindromeStringTest = "ALULA ANANA CIVIC DEKED DELED DERED DEWED KAIAK KAYAK LEMEL LEVEL MADAM MALAM MINIM RADAR REFER ROTOR SAGAS SAMAS" +
+                "SEDES SELES SEMES SERES SEXES SHAHS SIMIS SIRIS SOLOS STATS STETS STOTS SULUS SUSUS TENET TOROT ARAARA ATAATA";
+        ArrayList<String> expectedResult = new ArrayList<>(Arrays.asList("ARAARA", "ATAATA"));
+        assertArrayEquals(expectedResult.toArray(), findLongestPalindrome(palindromeStringTest).toArray());
+    }
+
+    @Test
+    @DisplayName("should return list of longest palindromes with extra words")
+    public void shouldReturnListOfLongestPalindromesWithExtraWords() {
         String palindromeStringTest = "ALULA ANANA CIVIC DEKED DELED DERED DEWED KAIAK KAYAK LEMEL LEVEL MADAM MALAM MINIM RADAR REFER ROTOR SAGAS SAMAS " +
                 "SEDES SELES SEMES SERES SEXES SHAHS SIMIS SIRIS SOLOS STATS STETS STOTS SULUS SUSUS TENET TOROT ARAARA ATAATA kayak deified rotator " +
                 "repaper deed peep wow noon civic racecar level mom bird rib taco cat UFO tofu Borrow or rob? Never odd or even. We panic in a pew. " +
